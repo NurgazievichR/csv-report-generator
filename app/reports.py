@@ -1,5 +1,4 @@
-from core import CSVParser
-from core import report_decorator
+from core import CSVParser, report_decorator
 
 
 @report_decorator()

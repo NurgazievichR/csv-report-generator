@@ -1,6 +1,7 @@
 import pytest
-from core import CSVParser
+
 from app.columns import COLUMNS_AND_ALIASES, COLUMNS_ORIGINALS
+from core import CSVParser
 
 
 def test_parse_columns():

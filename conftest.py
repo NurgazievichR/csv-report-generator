@@ -1,5 +1,5 @@
-import core
 import app
+import core
 
 
 def pytest_configure():

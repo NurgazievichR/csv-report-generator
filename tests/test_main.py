@@ -1,5 +1,7 @@
-import pytest
 import sys
+
+import pytest
+
 import main
 
 list_of_test = [

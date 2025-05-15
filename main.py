@@ -1,4 +1,5 @@
 import argparse
+
 from core import CSVParser, validate_input_data
 
 

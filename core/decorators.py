@@ -4,6 +4,7 @@ calculate_field_functions_register = []
 calculate_group_field_functions_register = []
 reports_register = []
 
+
 def calculated_field_decorator(max_size=10, name=None, group=False):
     def decorator(func):
         @wraps(func)
@@ -19,7 +20,9 @@ def calculated_field_decorator(max_size=10, name=None, group=False):
             calculate_field_functions_register.append(wrapper)
 
         return wrapper
+
     return decorator
+
 
 def report_decorator(name=None):
     def decorator(func):
@@ -31,5 +34,5 @@ def report_decorator(name=None):
         reports_register.append(wrapper)
 
         return wrapper
-    return decorator
 
+    return decorator

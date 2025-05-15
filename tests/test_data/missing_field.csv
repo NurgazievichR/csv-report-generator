@@ -1,0 +1,3 @@
+id,email,department,hours_worked,hourly_rate
+1,john@example.com,IT,40,20
+2,jane@example.com,HR,35,25

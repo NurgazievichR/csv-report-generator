@@ -1,6 +1,6 @@
 import os
 
-def check_input_data(args):
+def validate_input_data(args):
     for filepath in args.files:
         if not os.path.isfile(filepath):
             raise FileNotFoundError(f"File {filepath} does not exist")

@@ -112,14 +112,7 @@ class CSVParser:
             self._print_calculated_data(self.reports[i], calculated_fields_functions)
             i += 1
 
-    def output_group(self, group_by='department', calculated_group_fields_functions = None):
-        print(group_by.ljust(self.columns_longest_sizes[COLUMN_INDEXES[group_by]] + self.shift), end='')
-
-        for func in self.calc_group_filed_frunctions:
-            if func.name in calculated_group_fields_functions:
-                print(func.name.ljust(func.max_size + self.shift), end='')
-        print()
-
+    def generate_groups(self, group_by='department'):
         groups = {}
         for report in self.reports:
             group = report[COLUMN_INDEXES[group_by]]
@@ -129,6 +122,17 @@ class CSVParser:
                 if groups[group].get(COLUMNS_ORIGINALS[i]) is None:
                     groups[group][COLUMNS_ORIGINALS[i]] = []
                 groups[group][COLUMNS_ORIGINALS[i]].append(int(report[i]) if report[i].isdigit() else report[i])
+        return groups
+
+    def output_group(self, group_by='department', calculated_group_fields_functions = None):
+        print(group_by.ljust(self.columns_longest_sizes[COLUMN_INDEXES[group_by]] + self.shift), end='')
+
+        for func in self.calc_group_filed_frunctions:
+            if func.name in calculated_group_fields_functions:
+                print(func.name.ljust(func.max_size + self.shift), end='')
+        print()
+
+        groups = self.generate_groups(group_by)
 
         for group_key, group_data in groups.items():
             group_data['group_size'] = len(group_data['id'])

@@ -1,8 +1,10 @@
 from app.columns import COLUMNS_AND_ALIASES, COLUMNS_ORIGINALS
 
-from .decorators import (calculate_field_functions_register,
-                         calculate_group_field_functions_register,
-                         reports_register)
+from .decorators import (
+    calculate_field_functions_register,
+    calculate_group_field_functions_register,
+    reports_register,
+)
 
 COLUMNS_COUNT = len(COLUMNS_AND_ALIASES)
 COLUMN_INDEXES = {COLUMNS_ORIGINALS[i]: i for i in range(COLUMNS_COUNT)}

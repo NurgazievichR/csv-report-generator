@@ -1,7 +1,8 @@
 import os
+from argparse import Namespace
 
 
-def validate_input_data(args):
+def validate_input_data(args: Namespace) -> None:
     for filepath in args.files:
         if not os.path.isfile(filepath):
             raise FileNotFoundError(f"File {filepath} does not exist")

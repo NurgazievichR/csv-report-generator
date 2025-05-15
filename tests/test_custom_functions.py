@@ -1,7 +1,11 @@
 import pytest
 
-from core import (CSVParser, calculate_field_functions_register,
-                  calculate_group_field_functions_register, reports_register)
+from core import (
+    CSVParser,
+    calculate_field_functions_register,
+    calculate_group_field_functions_register,
+    reports_register,
+)
 
 
 @pytest.fixture(scope="module")

@@ -3,7 +3,7 @@ import argparse
 from core import CSVParser, validate_input_data
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(
         description="Process CSV files and generate reports."
     )

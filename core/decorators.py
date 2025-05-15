@@ -1,11 +1,12 @@
 from functools import wraps
+from typing import Callable, Any, Union
 
-calculate_field_functions_register = []
-calculate_group_field_functions_register = []
-reports_register = []
+calculate_field_functions_register: list[Callable[[dict], Union[str, int]]] = []
+calculate_group_field_functions_register: list[Callable[[dict], Union[str, int]]] = []
+reports_register: list[Callable[["CSVParser"], None]] = []
 
 
-def calculated_field_decorator(max_size=10, name=None, group=False):
+def calculated_field_decorator(max_size=10, name=None, group=False) -> Callable:
     def decorator(func):
         @wraps(func)
         def wrapper(dct):
@@ -24,7 +25,7 @@ def calculated_field_decorator(max_size=10, name=None, group=False):
     return decorator
 
 
-def report_decorator(name=None):
+def report_decorator(name=None) -> Callable:
     def decorator(func):
         @wraps(func)
         def wrapper(dct):

@@ -5,10 +5,14 @@ import pytest
 import app.calculated_fields as calc
 import app.calculated_group_fields as calc_group
 import app.reports as reports_
-from core import (CSVParser, calculate_field_functions_register,
-                  calculate_group_field_functions_register,
-                  calculated_field_decorator, report_decorator,
-                  reports_register)
+from core import (
+    CSVParser,
+    calculate_field_functions_register,
+    calculate_group_field_functions_register,
+    calculated_field_decorator,
+    report_decorator,
+    reports_register,
+)
 
 
 def test_all_functions_reports_registered():
